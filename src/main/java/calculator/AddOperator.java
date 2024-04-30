@@ -3,7 +3,7 @@ package calculator;
 public class AddOperator implements Operator {
 
     @Override
-    public Double Operate(int firstNumber, int secondNumber) {
-        return (double)(firstNumber + secondNumber);
+    public Double Operate(double firstNumber, double secondNumber) {
+        return firstNumber + secondNumber;
     }
 }

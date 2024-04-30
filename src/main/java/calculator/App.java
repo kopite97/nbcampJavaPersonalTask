@@ -20,18 +20,17 @@ public class App {
                 // 사칙연산 수행
 
                 System.out.print("Input first Number: ");
-                int firstNumber = sc.nextInt();
-                // Scanner를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
+                String firstNumberStr = sc.nextLine();
+
                 System.out.print("Input second Number: ");
-                int secondNumber = sc.nextInt();
-                // Scanner를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
+                String secondNumberStr = sc.nextLine();
 
                 System.out.print("Input Operator: \n1.+\n2.-\n3.*\n4./\n5.%\n");
                 int operator = sc.nextInt();
                 // 사칙연산 기호를 적합한 타입으로 선언한 변수에 저장합니다.
 
                 try {
-                    result = arithmeticCalc.Calculate(firstNumber, secondNumber, OperatorType.getOperatorTypeFromInt(operator-1));
+                    result = arithmeticCalc.Calculate(firstNumberStr, secondNumberStr, OperatorType.getOperatorTypeFromInt(operator-1));
                 } catch (CalculateException e) {
                     System.out.println(e.getMessage());
                     continue;
