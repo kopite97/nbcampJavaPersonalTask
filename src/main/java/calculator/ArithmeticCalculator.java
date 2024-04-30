@@ -9,7 +9,7 @@ public class ArithmeticCalculator extends Calculator {
     DivideOperator divideOperator;
     ModOperator modOperator;
 
-    public <T extends Number> Double Calculate(String firstGeneric, String secondGeneric, OperatorType type) throws CalculateException {
+    public Double Calculate(String firstGeneric, String secondGeneric, OperatorType type) throws CalculateException {
         Double result = 0.0;
 
         double firstNumber = 0.0;
