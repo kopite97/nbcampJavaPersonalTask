@@ -1,17 +1,13 @@
 package calculator;
-
 import java.util.LinkedList;
-import java.util.Queue;
+
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int resultArrayAmount = 3;
-        int index =0;
         String checkExit = "";
-
-        double[] results= new double[resultArrayAmount];
+        LinkedList<Double> results = new LinkedList<>();
 
         do{
             System.out.print("Input first Number: ");
@@ -25,17 +21,18 @@ public class App {
             String operator = sc.next();
             // 사칙연산 기호를 적합한 타입으로 선언한 변수에 저장합니다.
 
-            double result =0;
+            Double result = 0.0;
+
             switch (operator)
             {
                 case "+":
-                    result = firstNumber + secondNumber;
+                    result = (double)firstNumber + secondNumber;
                     break;
                 case "-":
-                    result = firstNumber - secondNumber;
+                    result = (double)firstNumber - secondNumber;
                     break;
                 case "*":
-                    result = firstNumber * secondNumber;
+                    result = (double)firstNumber * secondNumber;
                     break;
                 case "/":
                     if(secondNumber == 0)
@@ -51,23 +48,7 @@ public class App {
             }
 
             System.out.println("Result: " + result);
-            if (index > resultArrayAmount - 1) {
-                double[] temp = results;
-                for (int i = 0; i < results.length - 1; i++) {
-                    results[i] = temp[i + 1];
-                }
-                results[temp.length - 1] = result;
-
-            }
-            else {
-                results[index] = result;
-            }
-            index++;
-
-            System.out.print("results :");
-            for (var d : results) {
-                System.out.print(d+" ");
-            }
+            results.add(result);
 
             System.out.println("Do you want to Exit?? (Input \"exit\")");
             checkExit = sc.next();
