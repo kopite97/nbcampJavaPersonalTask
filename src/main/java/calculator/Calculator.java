@@ -19,6 +19,14 @@ public class Calculator {
         return results.poll()!= null;
     }
 
+    public void InquiryResults() {
+        System.out.print("Results : ");
+        for (var number : results) {
+            System.out.print(number + " ");
+        }
+        System.out.println("\n-----");
+    }
+
     public Double Calculate(int firstNumber, int secondNumber, String operator) throws CalculateException {
         Double result = 0.0;
 

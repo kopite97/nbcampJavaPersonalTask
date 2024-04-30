@@ -38,11 +38,7 @@ public class App {
             if (checkExit.equals("exit"))
                 break;
             else if (checkExit.equals("inquiry")) {
-                System.out.print("Results : ");
-                for (var number : calculator.getResults()) {
-                    System.out.print(number + " ");
-                }
-                System.out.println("\n-----");
+                calculator.InquiryResults();
             }
             else if (checkExit.equals("remove")) {
                 if (calculator.RemoveResult()) {
