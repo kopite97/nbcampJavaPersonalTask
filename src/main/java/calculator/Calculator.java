@@ -1,6 +1,11 @@
 package calculator;
 
+import java.util.LinkedList;
+
 public class Calculator {
+
+    public LinkedList<Double> results = new LinkedList<>();
+
     public Double Calculate(int firstNumber, int secondNumber, String operator) throws CalculateException {
         Double result = 0.0;
 
@@ -20,6 +25,7 @@ public class Calculator {
             default:
                 throw new CalculateException(operator);
         }
+        results.add(result);
         return result;
     }
 }

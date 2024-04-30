@@ -8,7 +8,6 @@ public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String checkExit = "";
-        LinkedList<Double> results = new LinkedList<>();
 
         Calculator calculator = new Calculator();
 
@@ -32,7 +31,6 @@ public class App {
             }
 
             System.out.println("Result: " + result);
-            results.add(result);
 
             System.out.println("Do you want to Exit?? (Input \"exit\" / \"inquiry\")");
             checkExit = sc.next();
@@ -40,7 +38,7 @@ public class App {
                 break;
             if (checkExit.equals("inquiry")) {
                 System.out.print("Results : ");
-                for (var number : results) {
+                for (var number : calculator.results) {
                     System.out.print(number + " ");
                 }
                 System.out.println("\n-----");
