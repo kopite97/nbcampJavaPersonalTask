@@ -34,23 +34,17 @@ public class App {
 
             System.out.println("Do you want to Exit?? (Input \"exit\" / \"inquiry\")");
             checkExit = sc.next();
+
             if (checkExit.equals("exit"))
                 break;
             if (checkExit.equals("inquiry")) {
                 System.out.print("Results : ");
-                for (var number : calculator.results) {
+                for (var number : calculator.getResults()) {
                     System.out.print(number + " ");
                 }
                 System.out.println("\n-----");
             }
 
         } while (true);
-
-
     }
-
-    public void Operate() {
-
-    }
-
 }
