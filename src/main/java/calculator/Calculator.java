@@ -7,7 +7,7 @@ public class Calculator {
 
     Queue<Double> results;
 
-    public  Double Calculate(int firstNumber, int secondNumber,String operator) throws CalculateException {return 0.0;};
+    public  Double Calculate(int firstNumber, int secondNumber,OperatorType type) throws CalculateException {return 0.0;};
     public  Double Calculate(double radius)  {return 0.0;};
 
     public Queue<Double> getResults() {

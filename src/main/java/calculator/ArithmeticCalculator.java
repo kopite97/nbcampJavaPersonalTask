@@ -1,7 +1,5 @@
 package calculator;
 
-import java.util.LinkedList;
-import java.util.Queue;
 
 public class ArithmeticCalculator extends Calculator{
 
@@ -11,27 +9,27 @@ public class ArithmeticCalculator extends Calculator{
     DivideOperator divideOperator;
     ModOperator modOperator;
 
-    public Double Calculate(int firstNumber, int secondNumber, String operator)throws CalculateException  {
+    public Double Calculate(int firstNumber, int secondNumber, OperatorType type)throws CalculateException  {
         Double result = 0.0;
 
-        switch (operator) {
-            case "+":
+        switch (type) {
+            case Add:
                 result = addOperator.Operate(firstNumber,secondNumber);
                 break;
-            case "-":
+            case Subtract:
                 result = subtractOperator.Operate(firstNumber,secondNumber);
                 break;
-            case "*":
+            case Multiply:
                 result = multiplyOperator.Operate(firstNumber,secondNumber);
                 break;
-            case "/":
+            case Divide:
                 result = divideOperator.Operate(firstNumber,secondNumber);
                 break;
-            case "%":
+            case Mod:
                 result = modOperator.Operate(firstNumber,secondNumber);
                 break;
             default:
-                throw new CalculateException(operator);
+                throw new CalculateException("Unknown operator type");
         }
         results.add(result);
         return result;
