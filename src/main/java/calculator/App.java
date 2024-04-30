@@ -1,7 +1,4 @@
 package calculator;
-
-import java.util.LinkedList;
-
 import java.util.Scanner;
 
 public class App {
@@ -9,7 +6,8 @@ public class App {
         Scanner sc = new Scanner(System.in);
         String checkExit = "";
 
-        Calculator calculator = new Calculator();
+        ArithmeticCalculator arithmeticCalc = new ArithmeticCalculator();
+        CircleCalculator circleCalc = new CircleCalculator();
 
         do {
             System.out.println("elementary arithmetic / area of a circle");
@@ -32,7 +30,7 @@ public class App {
                 // 사칙연산 기호를 적합한 타입으로 선언한 변수에 저장합니다.
 
                 try {
-                    result = calculator.Calculate(firstNumber, secondNumber, operator);
+                    result = arithmeticCalc.Calculate(firstNumber, secondNumber, operator);
                 } catch (CalculateException e) {
                     System.out.println(e.getMessage());
                     continue;
@@ -42,35 +40,35 @@ public class App {
                 // 원의 넓이 구하기 수행
                 System.out.println("Input radius");
                 double radius = sc.nextDouble();
-                result = calculator.CalculateCircle(radius);
+                result = circleCalc.Calculate(radius);
                 System.out.println("Area of circle : " + result);
             } else {
                 System.out.println("Wrong input");
                 continue;
             }
 
-
-            System.out.println("Do you want to exit?? (Input \"exit\" / \"(inquiry/cinquiry)\" / \"remove\")");
+            System.out.println("Do you want to exit?? (Input \"exit\" / \"(inquiry/cinquiry)\" / \"(remove/cremove)\")");
             checkExit = sc.next();
 
             if (checkExit.equals("exit"))
                 break;
             else if (checkExit.equals("inquiry")) {
-                calculator.InquiryResults();
+                arithmeticCalc.InquiryResults();
             }
             else if (checkExit.equals("cinquiry")) {
-                calculator.InquiryCircleResults();
+               circleCalc.InquiryResults();
             }
             else if (checkExit.equals("remove")) {
-                if (calculator.RemoveResult()) {
+                if (arithmeticCalc.RemoveResult()) {
                     System.out.println("Remove oldest result");
+                }
+            }
+            else if(checkExit.equals("cremove")) {
+                if (circleCalc.RemoveResult()) {
+                    System.out.println("remove oldest result");
                 }
             }
 
         } while (true);
-    }
-
-    public void ElementaryArithmetic() {
-
     }
 }
