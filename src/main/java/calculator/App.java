@@ -50,10 +50,18 @@ public class App {
             System.out.println("Result: " + result);
             results.add(result);
 
-            System.out.println("Do you want to Exit?? (Input \"exit\")");
+            System.out.println("Do you want to Exit?? (Input \"exit\" / \"inquiry\")");
             checkExit = sc.next();
             if(checkExit.equals("exit"))
                 break;
+            if(checkExit.equals("inquiry"))
+            {
+                System.out.print("Results : ");
+                for (var number : results) {
+                    System.out.print(number+" ");
+                }
+                System.out.println("\n-----");
+            }
 
         }while(true);
 
