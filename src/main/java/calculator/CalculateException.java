@@ -2,8 +2,8 @@ package calculator;
 
 public class CalculateException extends Exception {
 
-    public CalculateException(String oper) {
-        super("CalculateException: " + oper);
+    public CalculateException(String operator) {
+        super("CalculateException: Wrong Operation ( " + operator + " )");
     }
 
 }
