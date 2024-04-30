@@ -18,5 +18,32 @@ public class App {
         System.out.print("Input Operator: ");
         String operator = sc.next();
         // 사칙연산 기호를 적합한 타입으로 선언한 변수에 저장합니다.
+
+        double result =0;
+        switch (operator)
+        {
+            case "+":
+                result = firstNumber + secondNumber;
+                break;
+            case "-":
+                result = firstNumber - secondNumber;
+                break;
+            case "*":
+                result = firstNumber * secondNumber;
+                break;
+            case "/":
+                if(secondNumber == 0)
+                {
+                    System.out.println("Invalid Number");
+                }
+                result = (double)firstNumber / secondNumber;
+                break;
+            default:
+                System.out.println("Invalid Operator");
+                break;
+        }
+
+        System.out.println("Result: " + result);
+
     }
 }
