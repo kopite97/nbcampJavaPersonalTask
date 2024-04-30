@@ -1,7 +1,9 @@
 package calculator;
 
-public class MultiplyOperator {
-    public Double operate(int firstNumber,int secondNumber){
+public class MultiplyOperator implements Operator {
+
+    @Override
+    public Double Operate(int firstNumber, int secondNumber) {
         return (double)(firstNumber*secondNumber);
     }
 }

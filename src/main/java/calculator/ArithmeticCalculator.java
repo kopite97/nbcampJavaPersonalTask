@@ -9,22 +9,26 @@ public class ArithmeticCalculator extends Calculator{
     SubtractOperator subtractOperator;
     MultiplyOperator multiplyOperator;
     DivideOperator divideOperator;
+    ModOperator modOperator;
 
     public Double Calculate(int firstNumber, int secondNumber, String operator)throws CalculateException  {
         Double result = 0.0;
 
         switch (operator) {
             case "+":
-                result = addOperator.operate(firstNumber,secondNumber);
+                result = addOperator.Operate(firstNumber,secondNumber);
                 break;
             case "-":
-                result = subtractOperator.operate(firstNumber,secondNumber);
+                result = subtractOperator.Operate(firstNumber,secondNumber);
                 break;
             case "*":
-                result = multiplyOperator.operate(firstNumber,secondNumber);
+                result = multiplyOperator.Operate(firstNumber,secondNumber);
                 break;
             case "/":
-                result = divideOperator.operate(firstNumber,secondNumber);
+                result = divideOperator.Operate(firstNumber,secondNumber);
+                break;
+            case "%":
+                result = modOperator.Operate(firstNumber,secondNumber);
                 break;
             default:
                 throw new CalculateException(operator);
@@ -39,6 +43,7 @@ public class ArithmeticCalculator extends Calculator{
         subtractOperator = new SubtractOperator();
         multiplyOperator = new MultiplyOperator();
         divideOperator = new DivideOperator();
+        modOperator = new ModOperator();
     }
 
 }

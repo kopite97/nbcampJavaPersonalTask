@@ -1,9 +1,8 @@
 package calculator;
 
-public class SubtractOperator implements Operator  {
-
+public class ModOperator implements Operator{
     @Override
     public Double Operate(int firstNumber, int secondNumber) {
-        return (double)(firstNumber-secondNumber);
+        return (double)(firstNumber % secondNumber);
     }
 }
