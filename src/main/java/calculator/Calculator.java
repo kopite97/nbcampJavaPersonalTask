@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class Calculator {
 
-    private Queue<Double> results = new LinkedList<>();
+    private Queue<Double> results;
 
     public Queue<Double> getResults() {
         return results;
@@ -48,5 +48,9 @@ public class Calculator {
         }
         results.add(result);
         return result;
+    }
+
+    public Calculator() {
+        results = new LinkedList<>();
     }
 }
