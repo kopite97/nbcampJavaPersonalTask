@@ -9,15 +9,20 @@ public class ArithmeticCalculator extends Calculator {
     DivideOperator divideOperator;
     ModOperator modOperator;
 
-    public Double Calculate(String firstGeneric, String secondGeneric, OperatorType type) throws CalculateException {
+    public <T> Double Calculate(T firstGeneric, T secondGeneric, OperatorType type) throws CalculateException {
         Double result = 0.0;
+
+        if(!(firstGeneric instanceof String) || !(secondGeneric instanceof String))
+        {
+            return 0.0;
+        }
 
         double firstNumber = 0.0;
         double secondNumber = 0.0;
 
         try {
-           firstNumber = Double.parseDouble(firstGeneric);
-           secondNumber = Double.parseDouble(secondGeneric);
+           firstNumber = Double.parseDouble((String) firstGeneric);
+           secondNumber = Double.parseDouble((String) secondGeneric);
         } catch (NumberFormatException e2) {
             System.out.println("\nWrong Type\n\n\n-----\n");
             return 0.0;
