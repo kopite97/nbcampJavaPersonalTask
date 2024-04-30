@@ -32,17 +32,22 @@ public class App {
 
             System.out.println("Result: " + result);
 
-            System.out.println("Do you want to Exit?? (Input \"exit\" / \"inquiry\")");
+            System.out.println("Do you want to Exit?? (Input \"exit\" / \"inquiry\" / \"remove\")");
             checkExit = sc.next();
 
             if (checkExit.equals("exit"))
                 break;
-            if (checkExit.equals("inquiry")) {
+            else if (checkExit.equals("inquiry")) {
                 System.out.print("Results : ");
                 for (var number : calculator.getResults()) {
                     System.out.print(number + " ");
                 }
                 System.out.println("\n-----");
+            }
+            else if (checkExit.equals("remove")) {
+                if (calculator.RemoveResult()) {
+                    System.out.println("Remove oldest result");
+                }
             }
 
         } while (true);

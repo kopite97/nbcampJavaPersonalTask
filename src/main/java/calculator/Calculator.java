@@ -1,16 +1,22 @@
 package calculator;
 
 import java.util.LinkedList;
+import java.util.Queue;
 
 public class Calculator {
 
-    private LinkedList<Double> results = new LinkedList<>();
+    private Queue<Double> results = new LinkedList<>();
 
-    public LinkedList<Double> getResults() {
+    public Queue<Double> getResults() {
         return results;
     }
     public void setResults(LinkedList<Double> results) {
         this.results = results;
+    }
+
+    public boolean RemoveResult()
+    {
+        return results.poll()!= null;
     }
 
     public Double Calculate(int firstNumber, int secondNumber, String operator) throws CalculateException {
