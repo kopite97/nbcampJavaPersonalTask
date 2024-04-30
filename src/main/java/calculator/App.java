@@ -11,7 +11,7 @@ public class App {
         CircleCalculator circleCalc = new CircleCalculator();
 
         do {
-            System.out.println("elementary arithmetic / area of a circle");
+            System.out.println("\n\nelementary arithmetic / area of a circle");
             System.out.println("Input \"e\"/\"c\"");
             String checkOper = sc.nextLine();
             Double result = 0.0;
@@ -47,7 +47,7 @@ public class App {
                 continue;
             }
 
-            System.out.println("Do you want to exit?? (Input \"exit\" / \"(inquiry/cinquiry)\" / \"(remove/cremove)\")");
+            System.out.println("Do you want to exit?? (Input \"exit\" / \"(inquiry/cinquiry)\" / \"(remove/cremove)\" \"upper\")");
             checkExit = sc.next();
 
             if (checkExit.equals("exit"))
@@ -67,6 +67,10 @@ public class App {
                 if (circleCalc.RemoveResult()) {
                     System.out.println("remove oldest result");
                 }
+            } else if (checkExit.equals("upper")) {
+                System.out.println("\nInput Number");
+                double upper = sc.nextDouble();
+                arithmeticCalc.CheckUpperValues(upper);
             }
 
         } while (true);

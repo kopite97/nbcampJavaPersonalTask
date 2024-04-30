@@ -1,6 +1,8 @@
 package calculator;
 
 
+import java.util.List;
+
 public class ArithmeticCalculator extends Calculator {
 
     AddOperator addOperator;
@@ -49,6 +51,17 @@ public class ArithmeticCalculator extends Calculator {
         }
         results.add(result);
         return result;
+    }
+
+    public void CheckUpperValues(double number){
+        if (results.size() <= 0) {
+            System.out.println("There is nothing to check upper values");
+            return;
+        }
+
+        List<Double> filterList = results.stream().filter(x -> x > number).toList();
+        System.out.println("\nList that Upper values than input value\n");
+        filterList.forEach(num -> System.out.println(num+" "));
     }
 
     public ArithmeticCalculator() {
